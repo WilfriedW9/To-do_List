@@ -1,0 +1,179 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+body{
+    background: linear-gradient(rgb(129, 166, 187), black) ;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1, h2{
+    text-align: center;
+    color: white;
+}
+
+.container{
+    margin: 0 auto;
+    background: rgb(168, 168, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    flex-direction: column;
+    
+}
+input{
+    background-color: rgb(39, 69, 95);
+    border: none;
+    height: 2rem;
+    width: 300px;
+    color: white;
+    
+  
+    
+}
+
+input, .tache{
+    height: 2rem;
+    width: 300px;
+    margin: auto ;
+    
+}
+
+
+
+.list{
+    margin: 1rem 1rem 1rem 1rem ;
+    
+}
+.nav{
+    display: flex;
+    width: 300px;
+    margin-bottom: 1rem;
+    box-shadow: 10px 10px rgb(41, 53, 79);
+    
+}
+
+
+.tache{
+    background-color: rgb(237, 237, 237);
+    margin-bottom: 15px;
+    transition:  0.15s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.15s;
+    animation: fondu-apparition .15s linear;
+    box-shadow: 10px 10px rgb(79, 79, 79);
+    
+    
+    
+}
+
+
+.tache:nth-child(2n):hover{
+    box-shadow: none;
+    
+    transform: scale(1.05);
+    transform: rotateX(3deg);
+    transform: rotateY(3deg);
+    transform: rotateZ(3deg);
+}
+.tache:nth-child(2n+1):hover{
+    box-shadow: none;
+    
+    transform: scale(1.05);
+    transform: rotateX(-3deg);
+    transform: rotateY(-3deg);
+    transform: rotateZ(-3deg);
+}
+
+
+
+::placeholder{
+    color: rgb(183, 182, 182);
+}
+
+button {
+    cursor: pointer;
+}
+.ajoutTache, .retraitTache{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: none;
+    width: 2rem;
+   
+}
+
+.ajoutTache{
+    background-color: rgb(0, 0, 0);
+}
+.retraitTache{
+    background-color: rgb(212, 40, 40);
+    /* animation: fondu-disparition .15s linear; */
+}
+
+.ajoutTache::before, .ajoutTache::after{
+    content:"";
+    width: 3px;
+    height: 10px;
+    position: fixed;
+    background-color: rgb(225, 208, 79);
+}
+
+.ajoutTache::before{
+    rotate: 90deg;
+}
+
+
+.retraitTache::before, .retraitTache::after{
+    content:"";
+    width: 3px;
+    height: 10px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+}
+
+.retraitTache::before{
+    rotate: 45deg;
+}
+.retraitTache::after{
+    rotate: -45deg;
+}
+
+.retraitTache:hover, .ajoutTache:hover{
+    opacity: 50%;
+}
+
+@keyframes fondu-apparition {
+	from {
+		
+		opacity: 0;
+	}
+	to {
+		
+		opacity: 1;	
+	}
+}
+
+@keyframes fondu-disparition {
+	from {
+		
+		opacity: 1;
+	}
+	to {
+		
+		opacity: 0;	
+	}
+}
+
